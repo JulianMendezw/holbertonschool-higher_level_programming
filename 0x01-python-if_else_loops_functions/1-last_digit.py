@@ -12,7 +12,7 @@ print(num, "and is", end=" ")
 
 if num == 0:
     print("0")
-if num < 6:
+elif num < 6:
     print("less than 6 and not 0")
 else:
     print("greater than 5")

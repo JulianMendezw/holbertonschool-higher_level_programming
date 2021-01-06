@@ -23,10 +23,12 @@ class Square:
 
     @property
     def size(self):
+        """a class Square that defines a square"""
         return self.__size
 
     @size.setter
     def size(self, size):
+        """a class Square that defines a square"""
         self.__size = size
 
         if (type(size) is not int):
@@ -35,7 +37,21 @@ class Square:
         if (size < 0):
             raise ValueError("size must be >= 0")
 
+    @property
+    def position(self):
+        """a class Square that defines a square"""
+        return self.__position
+
+    @position.setter
+    def position(self, position):
+        """a class Square that defines a square"""
+        self.__position = position
+
+    if (size < 0):
+        raise ValueError("size must be >= 0")
+
     def my_print(self):
+        """a class Square that defines a square"""
 
         if self.__size == 0:
             print("")
@@ -49,14 +65,3 @@ class Square:
                 for j in range(self.__size):
                     print("#", end='')
                 print("")
-
-    @property
-    def position(self):
-        return self.__position
-
-    @position.setter
-    def position(self, position):
-        self.__position = position
-
-    if (size < 0):
-        raise ValueError("size must be >= 0")

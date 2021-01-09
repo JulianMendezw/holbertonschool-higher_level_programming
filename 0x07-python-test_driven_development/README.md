@@ -5,14 +5,6 @@ Foundations - Higher-level programming ― Python
 
 _by Guillaume, CTO at Holberton School_
 
-Ongoing project - started 01-06-2021, must end by 01-09-2021 (in 1 day) - you're done with  0% of tasks.
-
-Checker will be released at 01-09-2021 12:00 AM
-
-QA review fully automated.
-
-![](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/246/giphy-4.gif)
-
 ## Background Context
 
 ### Important notice on intranet checks for Python projects

@@ -1,11 +1,14 @@
 #!/usr/bin/python3
-""" Funcion to add two integers """
+"""a function that adds 2 integers"""
 
 
 def add_integer(a, b=98):
-    """ Funcion to add two integers """
-    if type(a) is not int and type(a) is not float:
-        raise TypeError("a must be an integer")
-    if type(b) is not int and type(b) is not float:
-        raise TypeError("b must be an integer")
+    """Adds two integers"""
+
+    if isinstance(a, (int, float)) is False:
+        raise TypeError('a must be an integer')
+
+    if isinstance(b, (int, float)) is False:
+        raise TypeError('b must be an integer')
+
     return int(a + b)

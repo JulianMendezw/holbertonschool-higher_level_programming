@@ -46,20 +46,16 @@ class Rectangle:
         return self.__width * self.__height
 
     def perimeter(self):
-        if self.__width == 0 or self.__height == 0:
+        if self.__width is 0 or self.__height is 0:
             return 0
 
         return self.__width * 2 + self.__height * 2
 
     def __str__(self):
-        string = ''
-
-        if self.__width != 0 and self.__height != 0:
-            for i in range(self.__height):
-                string += str(self.print_symbol) * self.__width
-                if i + 1 != self.__height:
-                    string += '\n'
-        return string
+        if self.__height is 0 or self.__width is 0:
+            return ""
+        pic = (str(self.print_symbol) * self.__width + "\n") * self.__height
+        return pic[:-1:]
 
     def __repr__(self):
         return "Rectangle({}, {})".format(self.__width, self.__height)

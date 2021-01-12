@@ -9,8 +9,9 @@ class Rectangle:
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        self.height = height
         self.width = width
+        self.height = height
+        self.print_symbol = Rectangle.print_symbol
         Rectangle.number_of_instances += 1
 
     @property
@@ -43,23 +44,18 @@ class Rectangle:
         return self.__width * self.__height
 
     def perimeter(self):
-        if self.__width == 0 or self.__height == 0:
+        if self.__height is 0 or self.__width is 0:
             return 0
-
-        return self.__width * 2 + self.__height * 2
+        return (self.__width * 2) + (self.__height * 2)
 
     def __str__(self):
-        string = ''
-
-        if self.__width != 0 and self.__height != 0:
-            for i in range(self.__height):
-                string += str(self.print_symbol) * self.__width
-                if i + 1 != self.height:
-                    string += '\n'
-        return string
+        if self.__height is 0 or self.__width is 0:
+            return ""
+        pic = (str(self.print_symbol) * self.__width + "\n") * self.__height
+        return pic[:-1:]
 
     def __repr__(self):
-        return "Rectangle({}, {})".format(self.width, self.height)
+        return "Rectangle({}, {})".format(self.__width, self.__height)
 
     def __del__(self):
         print("Bye rectangle...")
@@ -71,11 +67,10 @@ class Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
         if type(rect_2) is not Rectangle:
             raise TypeError("rect_2 must be an instance of Rectangle")
-
-        if rect_2.area() > rect_1.area():
+        if rect_1.area() >= rect_2.area():
+            return rect_1
+        else:
             return rect_2
-
-        return rect_1
 
     @classmethod
     def square(cls, size=0):

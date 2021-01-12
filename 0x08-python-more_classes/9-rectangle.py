@@ -56,12 +56,12 @@ class Rectangle:
         if self.__width != 0 and self.__height != 0:
             for i in range(self.__height):
                 string += str(self.print_symbol) * self.__width
-                if i + 1 != self.height:
+                if i + 1 != self.__height:
                     string += '\n'
         return string
 
     def __repr__(self):
-        return "Rectangle({}, {})".format(self.width, self.height)
+        return "Rectangle({}, {})".format(self.__width, self.__height)
 
     def __del__(self):
         print("Bye rectangle...")

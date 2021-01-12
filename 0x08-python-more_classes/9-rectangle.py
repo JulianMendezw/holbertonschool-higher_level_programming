@@ -13,10 +13,12 @@ class Rectangle:
         self.width = width
         type(self).number_of_instances += 1
 
+    """A class that defines a rectangle"""
     @property
     def width(self):
         return self.__width
 
+    """A class that defines a rectangle"""
     @width.setter
     def width(self, width):
         self.__width = width
@@ -26,10 +28,12 @@ class Rectangle:
         if width < 0:
             raise ValueError("width must be >= 0")
 
+    """A class that defines a rectangle"""
     @property
     def height(self):
         return self.__height
 
+    """A class that defines a rectangle"""
     @height.setter
     def height(self, height):
         self.__height = height
@@ -39,15 +43,18 @@ class Rectangle:
         if height < 0:
             raise ValueError("height must be >= 0")
 
+    """A class that defines a rectangle"""
     def area(self):
         return self.__width * self.__height
 
+    """A class that defines a rectangle"""
     def perimeter(self):
         if self.__width == 0 or self.__height == 0:
             return 0
 
         return self.__width * 2 + self.__height * 2
 
+    """A class that defines a rectangle"""
     def __str__(self):
         string = ''
 
@@ -58,13 +65,16 @@ class Rectangle:
                     string += '\n'
         return string
 
+    """A class that defines a rectangle"""
     def __repr__(self):
         return "Rectangle({}, {})".format(self.width, self.height)
 
+    """A class that defines a rectangle"""
     def __del__(self):
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
 
+    """A class that defines a rectangle"""
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         if isinstance(rect_1, Rectangle) is False:
@@ -78,6 +88,7 @@ class Rectangle:
 
         return rect_1
 
+    """A class that defines a rectangle"""
     @classmethod
     def square(cls, size=0):
         return cls(size, size)

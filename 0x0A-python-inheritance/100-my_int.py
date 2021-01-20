@@ -5,7 +5,7 @@
 class MyInt(int):
     """ A class MyInt that inherits from int """
     def __eq__(self, other):
-        return self.imag != other
+        return self.numerator != other
 
     def __ne__(self, other):
-        return self.imag == other
+        return self.numerator == other

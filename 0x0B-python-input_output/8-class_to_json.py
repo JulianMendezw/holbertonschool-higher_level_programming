@@ -7,4 +7,4 @@
 
 def class_to_json(obj):
     """ Function that returns the dictionary """
-    return dict(obj)
+    return obj.dict

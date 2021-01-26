@@ -8,13 +8,14 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """ Constructor """
         self.id = id
 
         if id is not None:
-            self.id = self.id
+            self.id = id
         else:
             Base.__nb_objects += 1
-            self.id = self.__nb_objects
+            self.id = Base.__nb_objects
 
     @staticmethod
     def to_json_string(list_dictionaries):
@@ -22,7 +23,7 @@ class Base:
 
         import json
         if list_dictionaries is None or not list_dictionaries:
-            return json.dumps("[]")
+            return json.dumps([])
 
         return json.dumps(list_dictionaries)
 

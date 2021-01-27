@@ -76,4 +76,3 @@ class Base:
             for dictionary in json_list:
                 instances_list.append(cls.create(**dictionary))
             return instances_list
-

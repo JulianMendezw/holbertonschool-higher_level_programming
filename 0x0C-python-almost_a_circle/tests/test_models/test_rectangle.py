@@ -19,7 +19,7 @@ class TestRectangleClass(unittest.TestCase):
         Testing valid id
         """
         r1 = Rectangle(10, 2)
-        self.assertEqual(r1.id, 8)
+        self.assertEqual(r1.id, 15)
 
     def test_display(self):
         """
@@ -38,9 +38,9 @@ class TestRectangleClass(unittest.TestCase):
         Testing valid ids
         """
         r2 = Rectangle(32, 2)
-        self.assertEqual(r2.id, 9)
+        self.assertEqual(r2.id, 16)
         r3 = Rectangle(7, 2)
-        self.assertEqual(r3.id, 10)
+        self.assertEqual(r3.id, 17)
         r4 = Rectangle(32, 3, 0, 0, 77)
         self.assertEqual(r4.id, 77)
 
@@ -67,7 +67,7 @@ class TestRectangleClass(unittest.TestCase):
         """
         r8 = Rectangle(32, 32, 13)
         self.assertEqual([r8.width, r8.height, r8.x, r8.y, r8.id],
-                         [32, 32, 13, 0, 12])
+                         [32, 32, 13, 0, 19])
 
     def test_params_setters(self):
         """

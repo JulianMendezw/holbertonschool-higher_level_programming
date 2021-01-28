@@ -59,7 +59,7 @@ class Base:
         """ Creates a new instance and update it with a dictionary """
 
         dummy = cls(1, 1)
-        dummy.update(**dictionary)
+        cls.update(dummy, **dictionary)
         return dummy
 
     @classmethod

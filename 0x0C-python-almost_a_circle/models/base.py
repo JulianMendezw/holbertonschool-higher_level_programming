@@ -58,7 +58,12 @@ class Base:
     def create(cls, **dictionary):
         """ Creates a new instance and update it with a dictionary """
 
-        dummy = cls(1, 1)
+        if cls.__name__ == 'Rectangle':
+            x = 1
+        elif cls.__name__ == 'Square':
+            x = 0
+
+        dummy = cls(1, x)
         cls.update(dummy, **dictionary)
         return dummy
 

@@ -58,7 +58,7 @@ class Base:
     def create(cls, **dictionary):
         """ Creates a new instance and update it with a dictionary """
 
-        dummy = cls(1, 1, 1)
+        dummy = cls(1, 1)
         dummy.update(**dictionary)
         return dummy
 

@@ -22,8 +22,8 @@ class Base:
         """ Convert a list of dictionaries to a json string """
 
         import json
-        if list_dictionaries is None or not list_dictionaries:
-            return json.dumps([])
+        if list_dictionaries is None or bool(list_dictionaries) is False:
+            return "[]"
 
         return json.dumps(list_dictionaries)
 
@@ -42,6 +42,7 @@ class Base:
 
         with open("{}.json".format(cls.__name__), 'w') as f:
             import json
+            new_list = Base.to_json_string(new_list)
             f.write(new_list)
 
     @staticmethod

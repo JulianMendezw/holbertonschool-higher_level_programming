@@ -38,11 +38,10 @@ class Base:
             new_list = []
             for objects in list_objs:
                 new_list.append(cls.to_dictionary(objects))
-            new_list = Base.to_json_string(new_list)
+        new_list = Base.to_json_string(new_list)
 
         with open("{}.json".format(cls.__name__), 'w') as f:
             import json
-            new_list = Base.to_json_string(new_list)
             f.write(new_list)
 
     @staticmethod

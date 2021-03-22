@@ -85,3 +85,5 @@ $ sudo apt-get install -y nodejs
 ```
 $ sudo npm install semistandard --global
 ```
+
+[![js-semistandard-style](https://raw.githubusercontent.com/standard/semistandard/master/badge.svg)](https://github.com/standard/semistandard)

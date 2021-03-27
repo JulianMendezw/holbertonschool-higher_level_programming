@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     session = Session()
 
-    update_row = session.query(State).filter_by(id == 2).first()
+    update_row = session.query(State).where(State.id == 2).first()
     update_row.name = 'New Mexico'
     session.commit()
 

@@ -16,10 +16,10 @@ if __name__ == "__main__":
 
     Base.metadata.create_all(engine)
 
-    session = Session()
+    session = Session(engine)
 
-    update_row = session.query(State).where(State.id == 2).first()
-    update_row.name = 'New Mexico'
+    update_row = session.query(State).filter(State.id == 2).first()
+    update_row.name = "New Mexico"
     session.commit()
 
     session.close()

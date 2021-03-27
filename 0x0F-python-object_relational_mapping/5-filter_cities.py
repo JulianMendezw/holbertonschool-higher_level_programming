@@ -15,11 +15,11 @@ if __name__ == "__main__":
 
     # HERE I have to know SQL to grab all states in my database
     cur.execute(
-        """SELECT c.name
-        FROM cities as c
-        JOIN states as s ON c.state_id=s.id
-        WHERE s.name = '{:s}'
-        ORDER BY c.id ASC;""".format(state,))
+        "SELECT cities.name "
+        "FROM cities "
+        "LEFT JOIN states "
+        "ON cities.state_id = states.id "
+        "WHERE states.name = %s;", (state,))
 
     query_rows = cur.fetchall()
 
@@ -29,7 +29,7 @@ if __name__ == "__main__":
             if query_rows[i + 1] is not None:
                 print(', ', end="")
         except:
-                print()
+            print()
 
     cur.close()
     conn.close()

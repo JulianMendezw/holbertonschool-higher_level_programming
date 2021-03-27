@@ -25,6 +25,10 @@ if __name__ == "__main__":
     # Adding Row to State class
     session.add(n_state)
 
+    new_row = session.query(State).filter(State.name == 'Louisiana')
+
+    print('{}'.format(new_row[0].id))
+
     # Updating table state
     session.commit()
 

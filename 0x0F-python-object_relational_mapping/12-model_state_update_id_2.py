@@ -14,13 +14,12 @@ if __name__ == "__main__":
         'mysql+mysqldb://{}:{}@localhost/{}'
         .format(username, password, database), pool_pre_ping=True)
 
-    new_name = 'New Mexico'
     Base.metadata.create_all(engine)
 
     session = Session(engine)
 
-    update_row = session.query(State).get(2)
-    update_row.name = new_name
+    update_row = session.query(State).filter(State.id == 2).first()
+    update_row.name = 'New Mexico'
     session.commit()
 
     session.close()

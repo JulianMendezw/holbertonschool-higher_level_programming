@@ -9,27 +9,29 @@ if __name__ == "__main__":
     database = sys.argv[3]
     state = sys.argv[4]
 
-    conn = MySQLdb.connect(host="localhost", port=3306, user=username,
-                           passwd=password, db=database, charset="utf8")
-    cur = conn.cursor()
+    try:
+        conn = MySQLdb.connect(host="localhost", port=3306, user=username,
+                               passwd=password, db=database, charset="utf8")
+        cur = conn.cursor()
 
-    # HERE I have to know SQL to grab all states in my database
-    cur.execute(
-        "SELECT cities.name "
-        "FROM cities "
-        "LEFT JOIN states "
-        "ON cities.state_id = states.id "
-        "WHERE states.name = %s;", (state,))
+        # HERE I have to know SQL to grab all states in my database
+        cur.execute(
+            "SELECT cities.name "
+            "FROM cities "
+            "LEFT JOIN states "
+            "ON cities.state_id = states.id "
+            "WHERE states.name = %s;", (state,))
 
-    query_rows = cur.fetchall()
+        query_rows = cur.fetchall()
 
-    for i in range(len(query_rows)):
-        print(query_rows[i][0], end="")
-        try:
+        for i in range(len(query_rows)):
+            print(query_rows[i][0], end="")
             if query_rows[i + 1] is not None:
                 print(', ', end="")
-        except:
-            print()
+        cur.close()
+        conn.close()
 
-    cur.close()
-    conn.close()
+    except:
+        pass
+
+    print()

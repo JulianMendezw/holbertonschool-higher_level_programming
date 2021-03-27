@@ -21,8 +21,9 @@ if __name__ == "__main__":
 
     session = Session(engine)
     # HERE: no SQL query, only objects!
-    for state, city in (session.query(State, City).
-                        filter(State.id == City.state_id)
-                        .order_by(State.id).all()):
-        print("{}: ({}) {}".format(state.name, city.id, city.name))
+    result = (session.query(State, City).filter(State.id == City.state_id)
+              .order_by(State.id).all())
+
+    for row in result:
+        print("{}: ({}) {}".format(row.State.name, row.City.id, row.City.name))
     session.close()

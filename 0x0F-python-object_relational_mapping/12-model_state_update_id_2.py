@@ -2,7 +2,6 @@
 from sqlalchemy import create_engine
 from model_state import Base, State
 from sqlalchemy.orm import Session
-from sqlalchemy import update
 import sys
 
 if __name__ == "__main__":
@@ -15,12 +14,13 @@ if __name__ == "__main__":
         'mysql+mysqldb://{}:{}@localhost/{}'
         .format(username, password, database), pool_pre_ping=True)
 
+    new_name = 'New Mexico'
     Base.metadata.create_all(engine)
 
     session = Session(engine)
 
     update_row = session.query(State).get(2)
-    update_row.name = 'New Mexico'
+    update_row.name = new_name
     session.commit()
 
     session.close()

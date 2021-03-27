@@ -18,8 +18,8 @@ if __name__ == "__main__":
         """SELECT c.name
         FROM cities as c
         JOIN states as s ON c.state_id=s.id
-        WHERE s.name = %s
-        ORDER BY c.id ASC;""", (state,))
+        WHERE s.name = '{:s}'
+        ORDER BY c.id ASC;""".format(state,))
 
     query_rows = cur.fetchall()
 

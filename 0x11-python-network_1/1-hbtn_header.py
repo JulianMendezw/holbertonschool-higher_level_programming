@@ -7,3 +7,5 @@ from sys import argv
 
 with urllib.request.urlopen(argv[1]) as response:
     print(response.getheader('X-Request-Id'))
+
+if __name__ == "__main__":

@@ -12,4 +12,4 @@ if __name__ == "__main__":
     data = parse.urlencode(header).encode('utf8')
 
     with request.urlopen(url, data=data) as response:
-        print(response.read())
+        print(response.read().encode('utf8'))

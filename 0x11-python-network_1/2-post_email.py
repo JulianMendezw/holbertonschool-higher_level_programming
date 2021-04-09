@@ -9,7 +9,7 @@ from sys import argv
 if __name__ == "__main__":
     url, email = argv[1], argv[2]
     header = {'email': email}
-    data = parse.urlencode(header).encode('utf8')
+    data = parse.urlencode(header).encode('ascii')
 
     with request.urlopen(url, data=data) as response:
-        print(response.read().encode('utf8'))
+        print(response.read().decode('utf8'))

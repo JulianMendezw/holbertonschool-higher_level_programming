@@ -6,10 +6,10 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    url = sys.argv[1]
+    url = argv[1]
     response = requests.get(url)
     code = response.statusstatus_code
     if code >= 400:
-        print("Error code: {}".format(code))
+        print("Error code:", code)
     else:
         print(r.text)

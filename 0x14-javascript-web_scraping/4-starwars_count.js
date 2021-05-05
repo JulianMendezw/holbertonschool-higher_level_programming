@@ -1,15 +1,23 @@
 #!/usr/bin/node
 const argv = process.argv;
-const url = argv[2];
-const fileName = argv[3];
-const fs = require('fs');
 const request = require('request');
+const url = argv[2];
+const characterID = 18;
+
+let count = 0;
+
 request(url, function (error, response, body) {
   if (error) {
-    console.error('error:', error);
+    console.log(error);
   } else {
-    fs.writeFile(fileName, body, 'utf8', function (err) {
-      if (err) return console.log(err);
-    });
+    const rbody = JSON.parse(body);
+    for (const i of rbody.results) {
+      for (const j of i.characters) {
+        if (j.search(characterID) > 0) {
+          count++;
+        }
+      }
+    }
+    console.log(count);
   }
 });

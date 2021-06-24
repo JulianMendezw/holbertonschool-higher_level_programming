@@ -1,23 +1,10 @@
 <div align="center"><img src="https://i.ibb.co/L9384Ks/Higher-level-programming.png"></div>
 
-
+<br>
 Foundations - Higher-level programming ― Python
 
 _by Guillaume, CTO at Holberton School_
 
-_weight: 1_
-
-Ongoing second chance project - started 12-07-2020, must end by 12-10-2020 (in 1 day) - you're done with  0% of tasks.
-
-QA review fully automated.
-
-#### In a nutshell…
-
--   **Auto QA review:**  0.0/89 mandatory & 0.0/27 optional
--   **Altogether:**  **0.0%**
-    -   Mandatory: 0.0%
-    -   Optional: 0.0%
-    -   Calculation: 0.0% + (0.0% * 0.0%) == **0.0%**
 
 ## Author’s disclaimer
 

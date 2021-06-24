@@ -1,5 +1,5 @@
 <div align="center"><img src="https://i.ibb.co/L9384Ks/Higher-level-programming.png"></div>
-##
+
 
 Foundations - Higher-level programming ― Python
 
